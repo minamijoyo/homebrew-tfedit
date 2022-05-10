@@ -5,20 +5,20 @@
 class Tfedit < Formula
   desc "A refactoring tool for Terraform"
   homepage "https://github.com/minamijoyo/tfedit"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.2/tfedit_0.0.2_darwin_arm64.tar.gz"
-      sha256 "0839168db5a50227d8236ad64783c4619516dcab7dd6810cb85769282e038d8c"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.3/tfedit_0.0.3_darwin_arm64.tar.gz"
+      sha256 "298d2cd3ff040fc4a12512654fccad4fbe114af2860864ac8947b99684bacf19"
 
       def install
         bin.install "tfedit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.2/tfedit_0.0.2_darwin_amd64.tar.gz"
-      sha256 "9aa8bf4b5684c17f399616b53d9cdbf3921af89a853ff34183a1b803f5264dfe"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.3/tfedit_0.0.3_darwin_amd64.tar.gz"
+      sha256 "1e68d957e0317b58d6190aee979060ef681f495dff4932866229445e22a957d5"
 
       def install
         bin.install "tfedit"
@@ -28,16 +28,16 @@ class Tfedit < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.2/tfedit_0.0.2_linux_arm64.tar.gz"
-      sha256 "993f6998c439793d05d1e95e7891f678747f5860541d6800b232f9698294993a"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.3/tfedit_0.0.3_linux_arm64.tar.gz"
+      sha256 "fc26728398ac8f40fcfb44d71b886c9704cce2ffc02085920674d3a0c0cfc37f"
 
       def install
         bin.install "tfedit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.2/tfedit_0.0.2_linux_amd64.tar.gz"
-      sha256 "acf6769ef8bd3a80876ef83dec8c0ea77e0095caf68b47fd25aff7ad2128df32"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.0.3/tfedit_0.0.3_linux_amd64.tar.gz"
+      sha256 "bf094fa34b015d7c7c71b566240c706e412d3f97e7c028461150909ae3722b52"
 
       def install
         bin.install "tfedit"
