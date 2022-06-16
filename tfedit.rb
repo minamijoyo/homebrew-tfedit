@@ -5,20 +5,20 @@
 class Tfedit < Formula
   desc "A refactoring tool for Terraform"
   homepage "https://github.com/minamijoyo/tfedit"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.0/tfedit_0.1.0_darwin_amd64.tar.gz"
-      sha256 "7f5ff179fa4758fb160c7a17897963cc79c7eac20decdc23d1f6860780fe07c9"
+    if Hardware::CPU.arm?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_darwin_arm64.tar.gz"
+      sha256 "9b757f9785a2573addd9ed6bfda10a05155f4e74fc4977a8503754cad4769a5a"
 
       def install
         bin.install "tfedit"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.0/tfedit_0.1.0_darwin_arm64.tar.gz"
-      sha256 "4a652be37e61ab5b1c3f35dac7b1a0645c7382e4c03fbf5d2b12227dc2f243c0"
+    if Hardware::CPU.intel?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_darwin_amd64.tar.gz"
+      sha256 "affbab1d050bb306727e554c5cfba40f24b2ceafcb581bfb54f38bb7e37a9094"
 
       def install
         bin.install "tfedit"
@@ -27,17 +27,17 @@ class Tfedit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.0/tfedit_0.1.0_linux_amd64.tar.gz"
-      sha256 "55e916351f561a43774b33f32d1e7bde0f6d5c896f0d5b5f328671c0585d3abf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_linux_arm64.tar.gz"
+      sha256 "6d77e36be34b5f2c4ba3695ee80aae328d4de51f933647d7f97963a56a0e4853"
 
       def install
         bin.install "tfedit"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.0/tfedit_0.1.0_linux_arm64.tar.gz"
-      sha256 "e1c88ccf6be25fb472976b886feafcd832d85dab7f9f970c6c63d7ce2bbec5bd"
+    if Hardware::CPU.intel?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_linux_amd64.tar.gz"
+      sha256 "ae5d2618782952c4fdde9378385f815c14a9f5db4fa76eda121cdacdffccf7f9"
 
       def install
         bin.install "tfedit"
