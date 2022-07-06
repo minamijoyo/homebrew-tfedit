@@ -5,20 +5,20 @@
 class Tfedit < Formula
   desc "A refactoring tool for Terraform"
   homepage "https://github.com/minamijoyo/tfedit"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_darwin_arm64.tar.gz"
-      sha256 "9b757f9785a2573addd9ed6bfda10a05155f4e74fc4977a8503754cad4769a5a"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.2/tfedit_0.1.2_darwin_arm64.tar.gz"
+      sha256 "be538def99455f8955ce2337f982fac4a8f778baf80405af58e2bb0e5df18ef9"
 
       def install
         bin.install "tfedit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_darwin_amd64.tar.gz"
-      sha256 "affbab1d050bb306727e554c5cfba40f24b2ceafcb581bfb54f38bb7e37a9094"
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.2/tfedit_0.1.2_darwin_amd64.tar.gz"
+      sha256 "4046f6b71b3455e90d7350ce2fa0cb8f5b9031d37d613cb1ae284126c46f5c64"
 
       def install
         bin.install "tfedit"
@@ -27,17 +27,17 @@ class Tfedit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_linux_arm64.tar.gz"
-      sha256 "6d77e36be34b5f2c4ba3695ee80aae328d4de51f933647d7f97963a56a0e4853"
+    if Hardware::CPU.intel?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.2/tfedit_0.1.2_linux_amd64.tar.gz"
+      sha256 "012827272b4036e01028085b8231cf16d8037a1ec3dfa726e146040f582768de"
 
       def install
         bin.install "tfedit"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.1/tfedit_0.1.1_linux_amd64.tar.gz"
-      sha256 "ae5d2618782952c4fdde9378385f815c14a9f5db4fa76eda121cdacdffccf7f9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.1.2/tfedit_0.1.2_linux_arm64.tar.gz"
+      sha256 "74dc5ce04351f500b3e9cf9e7d4050fc398487e6de3ee9b0f506bf028d1756b6"
 
       def install
         bin.install "tfedit"
