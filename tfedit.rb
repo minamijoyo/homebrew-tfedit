@@ -5,46 +5,40 @@
 class Tfedit < Formula
   desc "A refactoring tool for Terraform"
   homepage "https://github.com/minamijoyo/tfedit"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
-    on_intel do
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.2/tfedit_0.2.2_darwin_amd64.tar.gz"
-      sha256 "56f233c0791aea59bdf2c404cbb0f6d5204d8502ef10ce1bd7385d41354adb26"
+    if Hardware::CPU.intel?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.3/tfedit_0.2.3_darwin_amd64.tar.gz"
+      sha256 "054df31283b9efb271e54a5e7615e91f30c069f0c787c8c02567122ab5adc1f4"
 
-      def install
+      define_method(:install) do
         bin.install "tfedit"
       end
     end
-    on_arm do
-      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.2/tfedit_0.2.2_darwin_arm64.tar.gz"
-      sha256 "d6b88896787856d01b312bc0ddded10de8e468d03728f85c0ea9df6ff089262a"
+    if Hardware::CPU.arm?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.3/tfedit_0.2.3_darwin_arm64.tar.gz"
+      sha256 "8acdc0a25c3cb39500bfe7fee83864f18b452d2f32a3ef84e5e95e4428d3f306"
 
-      def install
+      define_method(:install) do
         bin.install "tfedit"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.2/tfedit_0.2.2_linux_amd64.tar.gz"
-        sha256 "a4c273a8d20332d6ce608b4e376a541c4922154e3ab931ebd1f37a5ad8041b58"
-
-        def install
-          bin.install "tfedit"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.3/tfedit_0.2.3_linux_amd64.tar.gz"
+      sha256 "7434e55f2cc51dab1f1d4d82797c8c2fe2ee35d9a8d0dba831ec0c604d8baf68"
+      define_method(:install) do
+        bin.install "tfedit"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.2/tfedit_0.2.2_linux_arm64.tar.gz"
-        sha256 "3438c13bf9936b81ffab54c198c5cbeec9312bd94a2494365cf0125e22fc3b87"
-
-        def install
-          bin.install "tfedit"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/minamijoyo/tfedit/releases/download/v0.2.3/tfedit_0.2.3_linux_arm64.tar.gz"
+      sha256 "16ff1e2f49796d8659641536f909edbfb78146fa864744a4111cec7980b941d5"
+      define_method(:install) do
+        bin.install "tfedit"
       end
     end
   end
